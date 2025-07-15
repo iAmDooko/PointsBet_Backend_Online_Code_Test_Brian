@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Linq;
 
 namespace PointsBet_Backend_Online_Code_Test
 {
@@ -46,6 +47,17 @@ namespace PointsBet_Backend_Online_Code_Test
             }
 
             return qry.ToString();
+        }
+        
+        public static string ToCommaSepatatedListComplexStringsLinq(string[] items)
+        {
+            // refactor above method to use Linq
+            if (items == null || items?.Length == 0)
+            {
+                return string.Empty;
+            }
+            
+            return string.Join(Separator, items.Select(item => $"{Quote}{item}{Quote}"));
         }
     }
 }
