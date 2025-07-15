@@ -14,21 +14,12 @@ namespace PointsBet_Backend_Online_Code_Test
     */
     public class StringFormatter
     {
-
-        //Code to improve
-        public static string ToCommaSepatatedList(string[] items, string quote)
+        private const string Separator = ",";
+        
+        public static string ToCommaSeparatedList(string[] items)
         {
-            StringBuilder qry = new StringBuilder(string.Format("{0}{1}{0}", quote, items[0]));
-
-            if (items.Length > 1)
-            {
-                for (int i = 1; i < items.Length; i++)
-                {
-                    qry.Append(string.Format(", {0}{1}{0}", quote, items[i]));
-                }
-            }
-
-            return qry.ToString();
+            // refactored to use join as this handles array items > 1 correctly
+            return items == null || items?.Length == 0 ? string.Empty : string.Join(Separator, items);
         }
     }
 }
