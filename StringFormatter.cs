@@ -25,15 +25,15 @@ namespace PointsBet_Backend_Online_Code_Test
             return items == null || items?.Length == 0 ? string.Empty : string.Join(Separator, items);
         }
         
-        public static string ToCommaSepatatedListComplexStrings(string[] items, string quote)
+        public static string ToCommaSepatatedListComplexStrings(string[] items)
         {
             // refactor for more complex arrays with quote marks
-            StringBuilder qry = new StringBuilder();
-
             if (items == null || items?.Length == 0)
             {
-                return qry.ToString();
+                return string.Empty;
             }
+            
+            StringBuilder qry = new StringBuilder();
             
             for (int i = 0; i < items.Length; i++)
             {
