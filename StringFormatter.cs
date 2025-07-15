@@ -37,7 +37,7 @@ namespace PointsBet_Backend_Online_Code_Test
             
             for (int i = 0; i < items.Length; i++)
             {
-                qry.Append(string.Format(StringFormat, quote, items[i]));
+                qry.Append(string.Format(StringFormat, Quote, items[i]));
 
                 if (i < items.Length - 1)
                 {
